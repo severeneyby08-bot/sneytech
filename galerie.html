@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Galerie</title>
+        <link rel="icon" type="image/jpeg" href="images/logo.jpg" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body class="gallery-page">
+        <div class="container">
+            <header class="topbar">
+                <nav class="gallery-nav" aria-label="Navigation de la galerie">
+                    <a class="brand" href="sneyby tech.html" aria-label="Accueil Sney Tech">
+                        <img src="images/logo.jpg" alt="Logo Sney Graphic de Sney Tech" />
+                        <span>Sney Tech</span>
+                    </a>
+                    <a class="gallery-nav-link" href="calcul.html">Calculatrice</a>
+                    <a class="btn-home" href="sneyby tech.html">Accueil</a>
+                </nav>
+            </header>
+
+            <h1 class="gallery-page-title">Galerie</h1>
+            <section class="thumbs" aria-label="Miniatures de la galerie">
+                <a class="thumb" href="images/Carte visite.png" aria-label="Ouvrir la carte de visite">
+                    <img src="images/Carte visite.png" alt="Carte de visite" />
+                </a>
+                <a class="thumb" href="images/flyers.png" aria-label="Ouvrir le flyer">
+                    <img src="images/flyers.png" alt="Flyers" />
+                </a>
+                <a class="thumb" href="images/logo.jpg" aria-label="Ouvrir le logo">
+                    <img src="images/logo.jpg" alt="Logo" />
+                </a>
+                <a class="thumb" href="images/promo.png" aria-label="Ouvrir la promo">
+                    <img src="images/promo.png" alt="Promotion" />
+                </a>
+                <a class="thumb" href="images/pub.png" aria-label="Ouvrir la publicité">
+                    <img src="images/pub.png" alt="Publicité" />
+                </a>
+                <a class="thumb" href="images/web-developer.jpg" aria-label="Ouvrir la photo d'un développeur web">
+                    <img src="images/web-developer.jpg" alt="Développeur web travaillant sur un ordinateur portable" />
+                </a>
+                <a class="thumb" href="images/code-screen.jpg" aria-label="Ouvrir la photo de code informatique">
+                    <img src="images/code-screen.jpg" alt="Code informatique affiché sur un écran" />
+                </a>
+                <a class="thumb" href="images/tech-team.jpg" aria-label="Ouvrir la photo d'une équipe technologique">
+                    <img src="images/tech-team.jpg" alt="Équipe collaborant autour de projets technologiques" />
+                </a>
+                <a class="thumb" href="images/electronics.jpg" aria-label="Ouvrir la photo de composants électroniques">
+                    <img src="images/electronics.jpg" alt="Composants électroniques d'un appareil technologique" />
+                </a>
+                <a class="thumb" href="images/phone-service.jpg" aria-label="Ouvrir la photo d'un téléphone pour le service mobile">
+                    <img src="images/phone-service.jpg" alt="Smartphone présenté pour un service de maintenance" />
+                </a>
+                <a class="thumb" href="images/phone-unlocked.jpg" aria-label="Ouvrir la photo d'un écran de téléphone verrouillé">
+                    <img src="images/phone-unlocked.jpg" alt="Smartphone affichant son écran de verrouillage" />
+                </a>
+            </section>
+
+            <section class="featured" aria-label="Image principale">
+                <div class="featured-card">
+                    <img src="images/web-developer.jpg" alt="Espace de travail d'un développeur web" />
+                </div>
+            </section>
+        </div>
+
+        <div class="lightbox" id="lightbox" aria-hidden="true">
+            <button class="close-lightbox" type="button" aria-label="Fermer">✕</button>
+            <button class="lightbox-nav previous-photo" type="button" aria-label="Photo précédente">&#8592;</button>
+            <img id="lightboxImage" src="" alt="Vue agrandie" />
+            <button class="lightbox-nav next-photo" type="button" aria-label="Photo suivante">&#8594;</button>
+            <p id="lightboxCaption"></p>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f59e0b" />
+    <meta name="description" content="Calculatrice intelligente avec opérations scientifiques, résolution d’exercices et OCR." />
+    <title>Calculatrice intelligente | Sney Tech</title>
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="images/logo.jpg" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="calculator-page">
+    <header class="site-header">
+        <div class="container nav-bar">
+            <a class="brand" href="sneyby tech.html" aria-label="Accueil Sney Tech">
+                <img src="images/logo.jpg" alt=" Sney Tech" />
+                <span>Sney Tech</span>
+            </a>
+            <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+            <nav class="main-nav" aria-label="Navigation principale" data-calculator-nav>
+                <a href="sneyby tech.html" data-calculator-copy="home">Accueil</a>
+                <a href="galerie.html" data-calculator-copy="gallery">Galerie</a>
+            </nav>
+            <button id="installAppButton" class="app-install-btn" type="button" hidden data-calculator-copy="installApp">Installer l’app</button>
+        </div>
+    </header>
+
+    <main class="container calculator-main">
+        <section class="calculator-panel" id="calculator" aria-labelledby="calculatorTitle">
+            <div class="calculator-heading">
+                <div>
+                    <p class="eyebrow" data-calculator-copy="eyebrow">Calcul précis</p>
+                    <h1 id="calculatorTitle">Calculatrice intelligente</h1>
+                </div>
+                <div class="calculator-settings">
+                    <label class="calculator-language">
+                        <span data-calculator-copy="language">Langue</span>
+                        <select id="calculatorLanguage" aria-label="Langue">
+                            <option value="fr">Français</option>
+                            <option value="ht">Kreyòl ayisyen</option>
+                            <option value="en">English</option>
+                        </select>
+                    </label>
+                    <label class="calculator-angle">
+                        <span data-calculator-copy="angle">Angle</span>
+                        <select id="calculatorAngle" aria-label="Angle">
+                            <option value="deg" data-calculator-copy="degrees">Degrés</option>
+                            <option value="rad" data-calculator-copy="radians">Radians</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+
+            <div class="calculator-display">
+                <label for="calculatorExpression" data-calculator-copy="expression">Expression</label>
+                <input id="calculatorExpression" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" maxlength="120" placeholder="12 + 34" />
+                <output id="calculatorResult" class="calculator-result" aria-live="polite">0</output>
+            </div>
+
+            <p id="calculatorStatus" class="calculator-status" role="status" aria-live="polite"></p>
+
+            <div class="scientific-keys" data-calculator-region="scientific" aria-label="Fonctions scientifiques">
+                <button type="button" data-insert="sin(" data-scientific-label="sine" aria-label="Sinus">sin</button>
+                <button type="button" data-insert="cos(" data-scientific-label="cosine" aria-label="Cosinus">cos</button>
+                <button type="button" data-insert="tan(" data-scientific-label="tangent" aria-label="Tangente">tan</button>
+                <button type="button" data-insert="sqrt(" data-scientific-label="squareRoot" aria-label="Racine carrée">√</button>
+                <button type="button" data-insert="log(" data-scientific-label="logarithm" aria-label="Logarithme décimal">log</button>
+                <button type="button" data-insert="ln(" data-scientific-label="naturalLog" aria-label="Logarithme népérien">ln</button>
+                <button type="button" data-insert="abs(" data-scientific-label="absolute" aria-label="Valeur absolue">abs</button>
+                <button type="button" data-insert="^2" data-scientific-label="square" aria-label="Carré">x²</button>
+                <button type="button" data-insert="^" data-scientific-label="power" aria-label="Puissance">xʸ</button>
+                <button type="button" data-insert="!" data-scientific-label="factorial" aria-label="Factorielle">n!</button>
+                <button type="button" data-insert="pi" data-scientific-label="pi" aria-label="Pi">π</button>
+                <button type="button" data-insert="e" data-scientific-label="euler" aria-label="Constante d’Euler">e</button>
+            </div>
+
+            <div class="calculator-keys" data-calculator-region="keys" aria-label="Touches de la calculatrice">
+                <button type="button" class="key-clear" data-action="clear" data-label="clear" aria-label="Effacer tout">AC</button>
+                <button type="button" data-action="backspace" data-label="backspace" aria-label="Effacer le dernier caractère">⌫</button>
+                <button type="button" data-value="(" data-label="openParen" aria-label="Parenthèse ouvrante">(</button>
+                <button type="button" data-value=")" data-label="closeParen" aria-label="Parenthèse fermante">)</button>
+
+                <button type="button" data-value="7">7</button>
+                <button type="button" data-value="8">8</button>
+                <button type="button" data-value="9">9</button>
+                <button type="button" class="key-operator" data-value="÷" data-label="divide" aria-label="Diviser">÷</button>
+
+                <button type="button" data-value="4">4</button>
+                <button type="button" data-value="5">5</button>
+                <button type="button" data-value="6">6</button>
+                <button type="button" class="key-operator" data-value="×" data-label="multiply" aria-label="Multiplier">×</button>
+
+                <button type="button" data-value="1">1</button>
+                <button type="button" data-value="2">2</button>
+                <button type="button" data-value="3">3</button>
+                <button type="button" class="key-operator" data-value="-" data-label="subtract" aria-label="Soustraire">−</button>
+
+                <button type="button" class="key-operator" data-value="%" data-label="percent" aria-label="Pourcentage">%</button>
+                <button type="button" data-value="0">0</button>
+                <button type="button" class="decimal-key" data-value="," data-label="decimal" aria-label="Virgule décimale">,</button>
+                <button type="button" class="key-operator" data-value="+" data-label="add" aria-label="Additionner">+</button>
+
+                <button type="button" class="key-equals" data-action="equals" data-label="equals" aria-label="Calculer">=</button>
+            </div>
+        </section>
+
+        <section class="exercise-panel" aria-labelledby="exerciseTitle">
+            <div class="exercise-heading">
+                <p class="eyebrow" data-calculator-copy="solverEyebrow">Résolution pas à pas</p>
+                <h2 id="exerciseTitle" data-calculator-copy="solverTitle">Résoudre un exercice</h2>
+            </div>
+            <div class="exercise-photo-actions">
+                <input id="exercisePhoto" class="photo-file-input" type="file" accept="image/*" capture="environment" aria-label="Choisir une photo de l’exercice" />
+                <button id="captureExercisePhoto" class="photo-capture-btn" type="button">
+                    <span aria-hidden="true">📷</span>
+                    <span data-calculator-copy="photoChoose">Prendre ou choisir une photo</span>
+                </button>
+                <button id="removeExercisePhoto" class="photo-remove-btn" type="button" data-calculator-copy="photoRemove" hidden>Retirer la photo</button>
+            </div>
+            <div id="exercisePhotoPreview" class="exercise-photo-preview" hidden>
+                <img id="exercisePhotoImage" src="" alt="Aperçu de la photo de l’exercice" />
+            </div>
+            <p id="photoOcrStatus" class="photo-ocr-status" role="status" aria-live="polite"></p>
+            <label for="exerciseExpression" data-calculator-copy="solverExpression">Expression mathématique</label>
+            <div class="exercise-input-row">
+                <input id="exerciseExpression" type="text" inputmode="text" autocomplete="off" spellcheck="false" maxlength="120" placeholder="(12 + 8) × 3" />
+                <button id="solveExercise" class="exercise-solve-btn" type="button" data-calculator-copy="solve">Résoudre</button>
+            </div>
+            <div class="ai-fallback-panel">
+                <div class="ai-inline-row">
+                    <label for="aiApiKey" class="ai-key-label" data-calculator-copy="aiApiKeyLabel">Kle API (si ou gen)</label>
+                    <input id="aiApiKey" class="ai-key-input" type="password" placeholder="Kle API" autocomplete="off" data-calculator-copy="aiApiPlaceholder" />
+                </div>
+                <button id="fixWithAi" class="ai-fix-btn" type="button" data-calculator-copy="aiFixButton">Korije otomatikman</button>
+                <p id="aiStatus" class="ai-status" aria-live="polite"></p>
+            </div>
+            <p id="exerciseResult" class="exercise-result" aria-live="polite"></p>
+            <h3 data-calculator-copy="stepsHeading">Étapes</h3>
+            <ol id="exerciseSteps" class="exercise-steps"></ol>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "Calculatrice intelligente | Sney Tech",
+  "short_name": "Kalkilatris",
+  "description": "Calculatrice intelligente avec fonctions scientifiques, résolution d’exercices et OCR.",
+  "start_url": "./calcul.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#090f1b",
+  "theme_color": "#f59e0b",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
