@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sney-tech-calculator-v1';
+const CACHE_NAME = 'sney-tech-calculator-v2';
 const ASSETS = [
   './',
   './calcul.html',
@@ -6,7 +6,7 @@ const ASSETS = [
   './script.js',
   './manifest.json',
   './images/logo.jpg',
-  './titravy.html',
+  './index.html',
   './galerie.html'
 ];
 
