@@ -4,6 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
     yearEl.textContent = new Date().getFullYear();
   }
 
+  if (window.location.hostname === 'appassets.androidplatform.net') {
+    document.querySelectorAll('.apk-download-link').forEach((link) => {
+      link.hidden = true;
+    });
+  }
+
   const menuToggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.main-nav');
 
@@ -76,6 +82,16 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    const calculator = document.getElementById('calculator');
+    if (calculator) {
+    const title = document.getElementById('calculatorTitle');
+    const languageSelect = document.getElementById('calculatorLanguage');
+    const angleSelect = document.getElementById('calculatorAngle');
+    const expressionInput = document.getElementById('calculatorExpression');
+    const resultOutput = document.getElementById('calculatorResult');
+    const statusOutput = document.getElementById('calculatorStatus');
+    const decimalKey = calculator.querySelector('.decimal-key');
+    const exerciseInput = document.getElementById('exerciseExpression');
     const exerciseResult = document.getElementById('exerciseResult');
     const exerciseSteps = document.getElementById('exerciseSteps');
     const solveExerciseButton = document.getElementById('solveExercise');
@@ -98,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         solverEyebrow: 'Résolution pas à pas', solverTitle: 'Résoudre un exercice', solverExpression: 'Expression mathématique', solverPlaceholder: '(12 + 8) × 3', solve: 'Résoudre', solution: 'Solution', stepsHeading: 'Étapes',
         error: 'Expression incorrecte.', divisionByZero: 'La division par zéro est impossible.', domainError: 'Cette opération n’a pas de résultat réel.', rangeError: 'Nombre trop grand pour cette opération.', home: 'Accueil', gallery: 'Galerie', navigation: 'Navigation principale', scientificKeys: 'Fonctions scientifiques', calculatorKeys: 'Touches de la calculatrice',
         photoChoose: 'Prendre ou choisir une photo', photoRemove: 'Retirer la photo', photoLoading: 'Lecture de la photo…', photoReady: 'Expression détectée :', photoError: 'Aucune expression lisible n’a été trouvée.', photoUnavailable: 'Le moteur OCR n’est pas disponible pour ce navigateur.',
-        aiApiKeyLabel: 'Clé API (si vous en avez)', aiApiPlaceholder: 'Clé API', aiFixButton: 'Corriger automatiquement', installApp: 'Installer l’app',
+        aiApiKeyLabel: 'Clé API (si vous en avez)', aiApiPlaceholder: 'Clé API', aiFixButton: 'Corriger automatiquement', installApp: 'Installer l’app', downloadApk: 'Télécharger l’app Android',
       },
       ht: {
         title: 'Kalkilatris entelijan', eyebrow: 'Kalkil presi', language: 'Lang', angle: 'Ang', degrees: 'Degre', radians: 'Radyan', expression: 'Ekspresyon',
@@ -109,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
         solverEyebrow: 'Rezoud etap pa etap', solverTitle: 'Rezoud yon egzèsis', solverExpression: 'Ekspresyon matematik', solverPlaceholder: '(12 + 8) × 3', solve: 'Rezoud', solution: 'Solisyon', stepsHeading: 'Etap',
         error: 'Ekspresyon an pa kòrèk.', divisionByZero: 'Ou pa ka divize pa zewo.', domainError: 'Operasyon sa a pa gen rezilta reyèl.', rangeError: 'Nimewo a twò gwo pou operasyon sa a.', home: 'Akèy', gallery: 'Galri', navigation: 'Navigasyon prensipal', scientificKeys: 'Fonksyon syantifik', calculatorKeys: 'Bouton kalkilatris la',
         photoChoose: 'Pran oswa chwazi yon foto', photoRemove: 'Retire foto a', photoLoading: 'Lekti foto an…', photoReady: 'Ekspresyon detekte :', photoError: 'Pa gen ekspresyon ki lizib.', photoUnavailable: 'Mote OCR a pa disponib nan navigatè sa a.',
-        aiApiKeyLabel: 'Kle API (si ou gen)', aiApiPlaceholder: 'Kle API', aiFixButton: 'Korije otomatikman', installApp: 'Enstale app la',
+        aiApiKeyLabel: 'Kle API (si ou gen)', aiApiPlaceholder: 'Kle API', aiFixButton: 'Korije otomatikman', installApp: 'Enstale app la', downloadApk: 'Telechaje app Android',
       },
       en: {
         title: 'Smart Calculator', eyebrow: 'Precise calculation', language: 'Language', angle: 'Angle', degrees: 'Degrees', radians: 'Radians', expression: 'Expression',
@@ -120,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
         solverEyebrow: 'Step-by-step solution', solverTitle: 'Solve an exercise', solverExpression: 'Math expression', solverPlaceholder: '(12 + 8) × 3', solve: 'Solve', solution: 'Solution', stepsHeading: 'Steps',
         error: 'Invalid expression.', divisionByZero: 'Division by zero is not possible.', domainError: 'This operation has no real result.', rangeError: 'Number is too large for this operation.', home: 'Home', gallery: 'Gallery', navigation: 'Main navigation', scientificKeys: 'Scientific functions', calculatorKeys: 'Calculator keys',
         photoChoose: 'Take or choose a photo', photoRemove: 'Remove photo', photoLoading: 'Reading the photo…', photoReady: 'Detected expression:', photoError: 'No readable expression was found.', photoUnavailable: 'The OCR engine is not available in this browser.',
-        aiApiKeyLabel: 'API key (if you have one)', aiApiPlaceholder: 'API key', aiFixButton: 'Auto-correct', installApp: 'Install app',
+        aiApiKeyLabel: 'API key (if you have one)', aiApiPlaceholder: 'API key', aiFixButton: 'Auto-correct', installApp: 'Install app', downloadApk: 'Download Android app',
       },
     };
 
@@ -785,7 +801,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (button.dataset.action !== 'equals') {
           calculate(false);
         }
-        expressionInput.focus();
       });
     });
 
