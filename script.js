@@ -27,8 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (form && messageEl) {
     form.addEventListener('submit', (event) => {
       event.preventDefault();
-      messageEl.textContent = 'Merci ! Votre demande a bien été envoyée.';
-      form.reset();
+      messageEl.textContent = 'Ce formulaire n’est pas connecté ; votre demande n’a pas été envoyée. Utilisez le bouton WhatsApp pour nous contacter.';
     });
   }
 
