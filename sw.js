@@ -1,6 +1,7 @@
-const CACHE_NAME = 'sney-tech-calculator-v2';
+const CACHE_NAME = 'sney-tech-calculator-v3';
 const ASSETS = [
   './',
+  './sneyby%20tech.html',
   './calcul.html',
   './style.css',
   './script.js',
