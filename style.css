@@ -101,6 +101,10 @@ a {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.app-install-btn[hidden] {
+    display: none;
+}
+
 .app-install-btn:hover {
     transform: translateY(-1px);
     box-shadow: 0 12px 22px rgba(245, 158, 11, 0.2);
@@ -837,6 +841,7 @@ textarea {
     font-size: 1.2rem;
     font-weight: 700;
     cursor: pointer;
+    touch-action: manipulation;
     transition: background 0.15s ease, transform 0.15s ease;
 }
 
