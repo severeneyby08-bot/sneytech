@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
       menuToggle.setAttribute('aria-expanded', String(isOpen));
     });
 
-    nav.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
+    nav.querySelectorAll('a, .scientific-keys button').forEach((item) => {
+      item.addEventListener('click', () => {
         nav.classList.remove('open');
         menuToggle.setAttribute('aria-expanded', 'false');
       });
@@ -491,13 +491,13 @@ document.addEventListener('DOMContentLoaded', () => {
       languageSelect.setAttribute('aria-label', copy.language);
       document.querySelector('[data-calculator-nav]').setAttribute('aria-label', copy.navigation);
       angleSelect.setAttribute('aria-label', copy.angle);
-      calculator.querySelectorAll('[data-calculator-region]').forEach((element) => {
+      document.querySelectorAll('[data-calculator-region]').forEach((element) => {
         element.setAttribute('aria-label', copy[element.dataset.calculatorRegion === 'scientific' ? 'scientificKeys' : 'calculatorKeys']);
       });
       calculator.querySelectorAll('[data-label]').forEach((button) => {
         button.setAttribute('aria-label', copy[button.dataset.label]);
       });
-      calculator.querySelectorAll('[data-scientific-label]').forEach((button) => {
+      document.querySelectorAll('[data-scientific-label]').forEach((button) => {
         button.setAttribute('aria-label', copy[button.dataset.scientificLabel]);
       });
       decimalKey.textContent = language === 'en' ? '.' : ',';
@@ -785,7 +785,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    calculator.querySelectorAll('[data-value], [data-action], [data-insert]').forEach((button) => {
+    document.querySelectorAll('.calculator-page [data-value], .calculator-page [data-action], .calculator-page [data-insert]').forEach((button) => {
       button.addEventListener('click', () => {
         if (button.dataset.action === 'clear') {
           expressionInput.value = '';
