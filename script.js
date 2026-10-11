@@ -84,27 +84,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const calculator = document.getElementById('calculator');
     if (calculator) {
-    const title = document.getElementById('calculatorTitle');
-    const languageSelect = document.getElementById('calculatorLanguage');
-    const angleSelect = document.getElementById('calculatorAngle');
-    const expressionInput = document.getElementById('calculatorExpression');
-    const resultOutput = document.getElementById('calculatorResult');
-    const statusOutput = document.getElementById('calculatorStatus');
-    const decimalKey = calculator.querySelector('.decimal-key');
-    const exerciseInput = document.getElementById('exerciseExpression');
-    const exerciseResult = document.getElementById('exerciseResult');
-    const exerciseSteps = document.getElementById('exerciseSteps');
-    const solveExerciseButton = document.getElementById('solveExercise');
-    const exercisePhotoInput = document.getElementById('exercisePhoto');
-    const captureExercisePhotoButton = document.getElementById('captureExercisePhoto');
-    const removeExercisePhotoButton = document.getElementById('removeExercisePhoto');
-    const exercisePhotoPreview = document.getElementById('exercisePhotoPreview');
-    const exercisePhotoImage = document.getElementById('exercisePhotoImage');
-    const photoOcrStatus = document.getElementById('photoOcrStatus');
-    const aiApiKeyInput = document.getElementById('aiApiKey');
-    const fixWithAiButton = document.getElementById('fixWithAi');
-    const aiStatus = document.getElementById('aiStatus');
-    const translations = {
+      const title = document.getElementById('calculatorTitle');
+      const languageSelect = document.getElementById('calculatorLanguage');
+      const angleSelect = document.getElementById('calculatorAngle');
+      const expressionInput = document.getElementById('calculatorExpression');
+      const resultOutput = document.getElementById('calculatorResult');
+      const statusOutput = document.getElementById('calculatorStatus');
+      const decimalKey = calculator.querySelector('.decimal-key');
+      const exerciseInput = document.getElementById('exerciseExpression');
+      const exerciseResult = document.getElementById('exerciseResult');
+      const exerciseSteps = document.getElementById('exerciseSteps');
+      const solveExerciseButton = document.getElementById('solveExercise');
+      const exercisePhotoInput = document.getElementById('exercisePhoto');
+      const captureExercisePhotoButton = document.getElementById('captureExercisePhoto');
+      const removeExercisePhotoButton = document.getElementById('removeExercisePhoto');
+      const exercisePhotoPreview = document.getElementById('exercisePhotoPreview');
+      const exercisePhotoImage = document.getElementById('exercisePhotoImage');
+      const photoOcrStatus = document.getElementById('photoOcrStatus');
+      const aiApiKeyInput = document.getElementById('aiApiKey');
+      const fixWithAiButton = document.getElementById('fixWithAi');
+      const aiStatus = document.getElementById('aiStatus');
+      const translations = {
       fr: {
         title: 'Calculatrice intelligente', eyebrow: 'Calcul précis', language: 'Langue', angle: 'Angle', degrees: 'Degrés', radians: 'Radians', expression: 'Expression',
         clear: 'Effacer tout', backspace: 'Effacer le dernier caractère', openParen: 'Parenthèse ouvrante',
