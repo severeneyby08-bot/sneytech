@@ -22,6 +22,26 @@
             <nav class="main-nav" aria-label="Navigation principale" data-calculator-nav>
                 <a href="index.html" data-calculator-copy="home">Accueil</a>
                 <a href="galerie.html" data-calculator-copy="gallery">Galerie</a>
+                <div class="calculator-menu-tools">
+                    <div class="calculator-settings">
+                        <label class="calculator-language">
+                            <span data-calculator-copy="language">Langue</span>
+                            <select id="calculatorLanguage" aria-label="Langue">
+                                <option value="fr">Français</option>
+                                <option value="ht">Kreyòl ayisyen</option>
+                                <option value="en">English</option>
+                            </select>
+                        </label>
+                        <label class="calculator-angle">
+                            <span data-calculator-copy="angle">Angle</span>
+                            <select id="calculatorAngle" aria-label="Angle">
+                                <option value="deg" data-calculator-copy="degrees">Degrés</option>
+                                <option value="rad" data-calculator-copy="radians">Radians</option>
+                            </select>
+                        </label>
+                    </div>
+                    <a id="apkDownloadLink" class="primary-btn apk-download-link" href="downloads/calculatrice-sney-tech.apk" download data-calculator-copy="downloadApk">Télécharger l’app Android</a>
+                </div>
             </nav>
             <button id="installAppButton" class="app-install-btn" type="button" hidden data-calculator-copy="installApp">Installer l’app</button>
         </div>
@@ -34,25 +54,10 @@
                     <p class="eyebrow" data-calculator-copy="eyebrow">Calcul précis</p>
                     <h1 id="calculatorTitle">Calculatrice intelligente</h1>
                 </div>
-                <div class="calculator-settings">
-                    <label class="calculator-language">
-                        <span data-calculator-copy="language">Langue</span>
-                        <select id="calculatorLanguage" aria-label="Langue">
-                            <option value="fr">Français</option>
-                            <option value="ht">Kreyòl ayisyen</option>
-                            <option value="en">English</option>
-                        </select>
-                    </label>
-                    <label class="calculator-angle">
-                        <span data-calculator-copy="angle">Angle</span>
-                        <select id="calculatorAngle" aria-label="Angle">
-                            <option value="deg" data-calculator-copy="degrees">Degrés</option>
-                            <option value="rad" data-calculator-copy="radians">Radians</option>
-                        </select>
-                    </label>
-                </div>
             </div>
-            <a id="apkDownloadLink" class="primary-btn apk-download-link" href="downloads/calculatrice-sney-tech.apk" download data-calculator-copy="downloadApk">Télécharger l’app Android</a>
+            <div class="calculator-actions">
+                <a class="secondary-btn calculator-home-btn" href="index.html" data-calculator-copy="home">Accueil</a>
+            </div>
 
             <div class="calculator-display">
                 <label for="calculatorExpression" data-calculator-copy="expression">Expression</label>
@@ -62,48 +67,51 @@
 
             <p id="calculatorStatus" class="calculator-status" role="status" aria-live="polite"></p>
 
-            <div class="scientific-keys" data-calculator-region="scientific" aria-label="Fonctions scientifiques">
-                <button type="button" data-insert="sin(" data-scientific-label="sine" aria-label="Sinus">sin</button>
-                <button type="button" data-insert="cos(" data-scientific-label="cosine" aria-label="Cosinus">cos</button>
-                <button type="button" data-insert="tan(" data-scientific-label="tangent" aria-label="Tangente">tan</button>
-                <button type="button" data-insert="sqrt(" data-scientific-label="squareRoot" aria-label="Racine carrée">√</button>
-                <button type="button" data-insert="log(" data-scientific-label="logarithm" aria-label="Logarithme décimal">log</button>
-                <button type="button" data-insert="ln(" data-scientific-label="naturalLog" aria-label="Logarithme népérien">ln</button>
-                <button type="button" data-insert="abs(" data-scientific-label="absolute" aria-label="Valeur absolue">abs</button>
-                <button type="button" data-insert="^2" data-scientific-label="square" aria-label="Carré">x²</button>
-                <button type="button" data-insert="^" data-scientific-label="power" aria-label="Puissance">xʸ</button>
-                <button type="button" data-insert="!" data-scientific-label="factorial" aria-label="Factorielle">n!</button>
-                <button type="button" data-insert="pi" data-scientific-label="pi" aria-label="Pi">π</button>
-                <button type="button" data-insert="e" data-scientific-label="euler" aria-label="Constante d’Euler">e</button>
-            </div>
+            <div class="calculator-keypad-layout">
+                <div class="calculator-scientific-column">
+                    <div class="scientific-keys" data-calculator-region="scientific" aria-label="Fonctions scientifiques">
+                        <button type="button" data-insert="sin(" data-scientific-label="sine" aria-label="Sinus">sin</button>
+                        <button type="button" data-insert="cos(" data-scientific-label="cosine" aria-label="Cosinus">cos</button>
+                        <button type="button" data-insert="tan(" data-scientific-label="tangent" aria-label="Tangente">tan</button>
+                        <button type="button" data-insert="sqrt(" data-scientific-label="squareRoot" aria-label="Racine carrée">√</button>
+                        <button type="button" data-insert="log(" data-scientific-label="logarithm" aria-label="Logarithme décimal">log</button>
+                        <button type="button" data-insert="ln(" data-scientific-label="naturalLog" aria-label="Logarithme népérien">ln</button>
+                        <button type="button" data-insert="abs(" data-scientific-label="absolute" aria-label="Valeur absolue">abs</button>
+                        <button type="button" data-insert="^2" data-scientific-label="square" aria-label="Carré">x²</button>
+                        <button type="button" data-insert="^" data-scientific-label="power" aria-label="Puissance">xʸ</button>
+                        <button type="button" data-insert="!" data-scientific-label="factorial" aria-label="Factorielle">n!</button>
+                        <button type="button" data-insert="pi" data-scientific-label="pi" aria-label="Pi">π</button>
+                        <button type="button" data-insert="e" data-scientific-label="euler" aria-label="Constante d’Euler">e</button>
+                    </div>
+                    <button type="button" class="key-equals" data-action="equals" data-label="equals" aria-label="Calculer">=</button>
+                </div>
+                <div class="calculator-keys" data-calculator-region="keys" aria-label="Touches de la calculatrice">
+                    <button type="button" class="key-clear" data-action="clear" data-label="clear" aria-label="Effacer tout">AC</button>
+                    <button type="button" data-action="backspace" data-label="backspace" aria-label="Effacer le dernier caractère">⌫</button>
+                    <button type="button" data-value="(" data-label="openParen" aria-label="Parenthèse ouvrante">(</button>
+                    <button type="button" data-value=")" data-label="closeParen" aria-label="Parenthèse fermante">)</button>
 
-            <div class="calculator-keys" data-calculator-region="keys" aria-label="Touches de la calculatrice">
-                <button type="button" class="key-clear" data-action="clear" data-label="clear" aria-label="Effacer tout">AC</button>
-                <button type="button" data-action="backspace" data-label="backspace" aria-label="Effacer le dernier caractère">⌫</button>
-                <button type="button" data-value="(" data-label="openParen" aria-label="Parenthèse ouvrante">(</button>
-                <button type="button" data-value=")" data-label="closeParen" aria-label="Parenthèse fermante">)</button>
+                    <button type="button" data-value="7">7</button>
+                    <button type="button" data-value="8">8</button>
+                    <button type="button" data-value="9">9</button>
+                    <button type="button" class="key-operator" data-value="÷" data-label="divide" aria-label="Diviser">÷</button>
 
-                <button type="button" data-value="7">7</button>
-                <button type="button" data-value="8">8</button>
-                <button type="button" data-value="9">9</button>
-                <button type="button" class="key-operator" data-value="÷" data-label="divide" aria-label="Diviser">÷</button>
+                    <button type="button" data-value="4">4</button>
+                    <button type="button" data-value="5">5</button>
+                    <button type="button" data-value="6">6</button>
+                    <button type="button" class="key-operator" data-value="×" data-label="multiply" aria-label="Multiplier">×</button>
 
-                <button type="button" data-value="4">4</button>
-                <button type="button" data-value="5">5</button>
-                <button type="button" data-value="6">6</button>
-                <button type="button" class="key-operator" data-value="×" data-label="multiply" aria-label="Multiplier">×</button>
+                    <button type="button" data-value="1">1</button>
+                    <button type="button" data-value="2">2</button>
+                    <button type="button" data-value="3">3</button>
+                    <button type="button" class="key-operator" data-value="-" data-label="subtract" aria-label="Soustraire">−</button>
 
-                <button type="button" data-value="1">1</button>
-                <button type="button" data-value="2">2</button>
-                <button type="button" data-value="3">3</button>
-                <button type="button" class="key-operator" data-value="-" data-label="subtract" aria-label="Soustraire">−</button>
+                    <button type="button" class="key-operator" data-value="%" data-label="percent" aria-label="Pourcentage">%</button>
+                    <button type="button" data-value="0">0</button>
+                    <button type="button" class="decimal-key" data-value="," data-label="decimal" aria-label="Virgule décimale">,</button>
+                    <button type="button" class="key-operator" data-value="+" data-label="add" aria-label="Additionner">+</button>
 
-                <button type="button" class="key-operator" data-value="%" data-label="percent" aria-label="Pourcentage">%</button>
-                <button type="button" data-value="0">0</button>
-                <button type="button" class="decimal-key" data-value="," data-label="decimal" aria-label="Virgule décimale">,</button>
-                <button type="button" class="key-operator" data-value="+" data-label="add" aria-label="Additionner">+</button>
-
-                <button type="button" class="key-equals" data-action="equals" data-label="equals" aria-label="Calculer">=</button>
+                </div>
             </div>
         </section>
 
