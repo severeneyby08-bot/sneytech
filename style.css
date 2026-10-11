@@ -721,6 +721,69 @@ textarea {
     color: #f8fafc;
 }
 
+.calculator-page .nav-bar {
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.calculator-page .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.calculator-page .main-nav {
+    position: absolute;
+    top: calc(100% - 4px);
+    right: 0;
+    z-index: 11;
+    display: none;
+    width: min(380px, 90vw);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 14px;
+    background: #111c2c;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
+}
+
+.calculator-page .main-nav.open {
+    display: flex;
+}
+
+.calculator-page .main-nav > a {
+    padding: 4px 2px;
+}
+
+.calculator-menu-tools {
+    display: grid;
+    gap: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.calculator-menu-tools .calculator-settings {
+    width: 100%;
+}
+
+.calculator-menu-tools .calculator-settings label {
+    min-width: 0;
+}
+
+.calculator-menu-tools .calculator-settings label span {
+    margin-bottom: 4px;
+}
+
+.calculator-menu-tools .apk-download-link {
+    justify-self: start;
+    min-height: 40px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+}
+
 .calculator-main {
     display: flex;
     flex-direction: column;
@@ -733,12 +796,19 @@ textarea {
 
 .calculator-panel,
 .exercise-panel {
-    width: min(100%, 560px);
     padding: 30px;
     border: 1px solid rgba(148, 163, 184, 0.28);
     border-radius: 20px;
     background: rgba(15, 23, 42, 0.82);
     box-shadow: 0 24px 56px rgba(0, 0, 0, 0.32);
+}
+
+.calculator-panel {
+    width: min(100%, 820px);
+}
+
+.exercise-panel {
+    width: min(100%, 700px);
 }
 
 .calculator-heading {
@@ -756,27 +826,46 @@ textarea {
 }
 
 .calculator-language {
-    min-width: 132px;
+    min-width: 0;
     font-size: 0.85rem;
 }
 
 .calculator-language select {
-    padding: 8px 10px;
+    padding: 7px 8px;
 }
 
 .calculator-settings {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: end;
+    gap: 8px;
+}
+
+.calculator-actions {
     display: flex;
-    align-items: flex-end;
-    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.calculator-actions a {
+    min-height: 44px;
+}
+
+.calculator-actions .apk-download-link {
+    min-height: 40px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
 }
 
 .calculator-angle {
-    min-width: 112px;
+    min-width: 0;
     font-size: 0.85rem;
 }
 
 .calculator-angle select {
-    padding: 8px 10px;
+    padding: 7px 8px;
 }
 
 .calculator-display {
@@ -823,14 +912,27 @@ textarea {
     font-size: 0.9rem;
 }
 
+.calculator-keypad-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.35fr);
+    align-items: start;
+    gap: 10px;
+}
+
 .calculator-keys {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 10px;
 }
 
+.calculator-scientific-column {
+    display: grid;
+    gap: 10px;
+}
+
 .calculator-keys button,
-.scientific-keys button {
+.scientific-keys button,
+.key-equals {
     min-width: 0;
     min-height: 56px;
     border: 1px solid rgba(148, 163, 184, 0.2);
@@ -846,7 +948,8 @@ textarea {
 }
 
 .calculator-keys button:hover,
-.scientific-keys button:hover {
+.scientific-keys button:hover,
+.key-equals:hover {
     background: #35475d;
     transform: translateY(-1px);
 }
@@ -861,8 +964,7 @@ textarea {
     color: #fcd34d;
 }
 
-.calculator-keys .key-equals {
-    grid-column: 1 / -1;
+.key-equals {
     border: 0;
     background: linear-gradient(135deg, #f59e0b, #f97316);
     color: #fff;
@@ -871,14 +973,15 @@ textarea {
 .scientific-keys {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 8px;
-    margin-bottom: 10px;
+    gap: 6px;
 }
 
 .scientific-keys button {
-    min-height: 44px;
+    min-height: 48px;
+    padding: 2px 1px;
     background: rgba(251, 191, 36, 0.1);
     color: #fde68a;
+    font-size: 1rem;
 }
 
 .exercise-heading h2 {
@@ -1066,7 +1169,10 @@ textarea {
         padding-right: 18px;
     }
 
-    .calculator-panel,
+    .calculator-panel {
+        width: min(100%, 820px);
+    }
+
     .exercise-panel {
         width: min(100%, 700px);
     }
@@ -1089,12 +1195,10 @@ textarea {
 
     .calculator-settings {
         width: 100%;
-        flex-wrap: wrap;
     }
 
     .calculator-language,
     .calculator-angle {
-        flex: 1 1 160px;
         min-width: 0;
     }
 }
@@ -1116,28 +1220,22 @@ textarea {
         flex-direction: column;
     }
 
-    .calculator-settings,
-    .calculator-language,
-    .calculator-angle {
-        width: 100%;
-    }
-
     .calculator-settings {
-        align-items: stretch;
-        flex-direction: column;
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .calculator-keys {
         gap: 8px;
     }
 
+    .calculator-keypad-layout {
+        gap: 8px;
+    }
+
     .calculator-keys button,
     .scientific-keys button {
         min-height: 52px;
-    }
-
-    .scientific-keys {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .exercise-input-row {
@@ -1164,7 +1262,7 @@ textarea {
     }
 
     .scientific-keys {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .ai-inline-row,
@@ -1173,5 +1271,20 @@ textarea {
     .exercise-solve-btn,
     .ai-fix-btn {
         width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .calculator-keys button {
+        font-size: 0.9rem;
+        padding: 1px 2px;
+    }
+
+    .scientific-keys button {
+        font-size: 1rem;
+    }
+
+    .scientific-keys {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
